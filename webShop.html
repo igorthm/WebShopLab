@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop | Print One</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="This page is not done yet:/">
+	<style>
+	body {
+		font-family: "DIN", Helvetica, Arial, sans-serif;
+		font-size: 100%;
+		font-weight: 350;
+		min-height: 100vh;
+		height: 100%;
+		color: #232222;
+	}
+	.navLogo {
+		position: fixed;
+		width: 50px;
+		height: 50px;
+		top: 25px;
+		right: 25px;
+		background-color: #EFD0D0;
+		border-radius: 50%;
+	}
+	.navList	{
+		display: block;
+		position: absolute;
+		top: 33px;
+		padding: 0;
+		margin: 0;
+	}
+	.navList-item {
+		list-style: none;
+		display: inline-block;
+		float: left;
+		padding-top: 0px;
+		padding-left: 60px;
+		margin: 0px auto;
+		overflow: hidden;
+		padding-bottom: 10px;
+		user-select: none;
+		color: #232222;
+		font-size: 14px;
+	}
+	.shop_productsContainer	{
+		position: relative;
+		height: auto;
+		display:flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		padding: 100px 0 200px;
+	}
+	.shop_product {
+		position: relative;
+		height: auto;
+		width: 300px;
+		margin: 40px;
+		cursor: pointer;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.shop_product-image	{
+		width: 100%;
+		display: block;
+		padding-top: 130%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-color: #E8E8E8;
+	}
+	.shop_product-text	{
+		text-decoration: none;
+		display: table;
+		position: relative;
+		padding: 0;
+		margin: 5px auto 0;
+		font-size: 10px;
+		font-weight: 400;
+	}
+	footer {
+		width: 150px;
+		height: 150px;
+		position: fixed;
+		left: 35px;
+		bottom: 35px;
+		text-transform: uppercase;
+		z-index: 9;
+		user-select: none;
+		font-size: 14px;
+	}
+	.sideBar {
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: auto;
+		float: none;
+		padding: 0;
+	}
+	.sideBar-item {
+		display: block;
+		text-align: left;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		margin-bottom: 10px;
+		float: none;
+		padding-bottom: 10px;
+	}
+	.sort	{ 
+		width: 100px;
+		height: 100px;
+		position: fixed;
+		left: 35px;
+		top: 150px;
+		text-transform: uppercase;
+		z-index: 9;
+		user-select: none;
+		font-size: 14px;
+	}
+	
+	
+	
+	</style>
+	<!-- 
+	░░░░░░░░░░░░░░░░░░░░░░█████████
+	░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███
+	░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███
+	░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+	░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███
+	░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██
+	░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+	░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██
+	░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██
+	██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██
+	█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██
+	██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+	░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+	░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+	░░████████████░░░█████████████████
+	
+	-->
+</head>
+
+<body>
+	<header>
+		<nav>
+				<!-- будет лого с ссылкой на главную страницу 
+			<a href="/">
+				<отрисовка лого>
+			</a>		-->
+			<span class="navLogo"></span>
+			<ul class="navList">
+				<li class="navList-item" style="padding-left: 35px;">MAIN</li>		<!-- <a href="/"></a> -->
+				<li class="navList-item">SHOP</li>		<!-- <a href="/shop"></a> -->
+				<li class="navList-item">SEARCH</li>	<!-- <a></a> -->
+				<li class="navList-item">LOG IN</li>	<!-- <a>login</a> -->
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="shop_productsContainer">
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 999.0$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 199.0$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 2,000.0$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 9,999.0$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 199.99$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 69.96$</div>
+		</div>
+		<div class="shop_product">
+			<div class="shop_product-image" style></div>
+			<div class="shop_product-text">THERE IS GONABE ITEM / 69.96$</div>
+		</div>
+	</div>
+	<div class="sort">	
+		<div class="sideBar-item">SORT</div>
+		<div class="sideBar-item">FILTER</div>
+	</div>
+	<footer>
+		<ul class="sideBar">
+			<li class="sideBar-item">CART(0)</li>	
+			<li class="sideBar-item">SHIPPING</li>	
+			<li class="sideBar-item">ABOUT</li>		
+			<li class="sideBar-item">FAQ</li>
+		</ul>
+	</footer>
+</body>
+
+</html>
